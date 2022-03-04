@@ -5,10 +5,13 @@
 
 int main( int /*argc*/, char** /*argv*/ )
 {
+    //创建一个大小为640*480的窗口
     pangolin::CreateWindowAndBind("Main",640,480);
+    //启用深度测试
     glEnable(GL_DEPTH_TEST);
 
-    // Define Projection and initial ModelView matrix
+    //定义投影和初始模型视图矩阵 
+    //摆放一个相机
     pangolin::OpenGlRenderState s_cam(
         pangolin::ProjectionMatrix(640,480,420,420,320,240,0.2,100),
         pangolin::ModelViewLookAt(-2,2,-2, 0,0,0, pangolin::AxisY)
